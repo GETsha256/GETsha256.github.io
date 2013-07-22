@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <META charset="utf-8" />
+    <META HTTP-EQUIV="Cache-Control" CONTENT="Public">
+    <META NAME="Description" CONTENT="A quick and simple sha256 generator to hash text strings. Ideal for securing passwords in a database." />
+	<META NAME="Keywords" CONTENT="sha256, hash, checksum, generator, password, security, database, algorithm, javascript, code, get, find" />
+	<META NAME="Author" CONTENT="Robin" />
+	<META NAME="Robots" CONTENT="All" />
+    
+    <title>GETsha256.tk | Get any sha-256 hash in an instant!</title>	
+	
+	<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAKSkpAAAAAAAAAAAAAAAAADgcAABEIgAAgkEAAIGBAACBgQAAgkEAAEQiAAA4HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AADH4wAAu90AAH2+AAB+fgAAfn4AAH2+AAC73QAAx+MAAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    
+    <style type="text/css">
+		*{text-rendering:optimizeLegibility;font-family:'Inconsolata','Consolas',monaco,monospace,sans-serif;margin:0;padding:0}html{height:100%}body{height:auto}a{color:white}a img{border:none}#main_header{position:absolute;left:0;top:0;width:100%;line-height:35px;background:#424242;background:-moz-linear-gradient(top,#424242 0%,#1b1b1b 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#424242),color-stop(100%,#1b1b1b));background:-webkit-linear-gradient(top,#424242 0%,#1b1b1b 100%);background:-o-linear-gradient(top,#424242 0%,#1b1b1b 100%);background:-ms-linear-gradient(top,#424242 0%,#1b1b1b 100%);background:linear-gradient(to bottom,#424242 0%,#1b1b1b 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#424242',endColorstr='#1b1b1b',GradientType=0 );box-shadow:0 0 2px #000;z-index:5}#main_header ul{list-style:none;padding:0 10px}#main_header ul li{display:inline-block;margin-left:2.5%;opacity:.8;float:right}#main_header ul li.left{float:left;margin-left:0}#main_header ul li a{text-decoration:none}#main_header ul li a img{vertical-align:middle}#main_header ul li:hover{opacity:1}aside{width:275px;height:100%;padding:0 5px;right:0;top:0;position:absolute;background-color:#171717;overflow-y:auto;opacity:0.65;box-shadow:0 0 1px #000;display:none}aside p,aside h2{color:white;opacity:0.8;font-size:0.69em}aside h2{margin-top:40px;font-size:1.1em;border-bottom:2px solid #fff}aside p{margin-top:15px;z-index:10}#container{width:440px;height:100px;text-align:center;margin:150px auto 0 auto}#container .logo{margin-bottom:25px}#container input{height:25px;width:440px;text-align:center;border:2.5px solid #fff;border-radius:4px;box-shadow:1px 1px 4px #555;margin-bottom:10px;font-size:.75em;outline:none}#main_footer{position:absolute;bottom:0;left:0;width:100%;background:#fff;text-align:center;box-shadow:0 0 5px #000;opacity:.85;padding:8px 0}#main_footer p{text-shadow:0 0 2px #000}#main_footer p a{color:#000}#social{position:absolute;bottom:20px;left:20px}.center{text-align:center}.bold{font-weight:bold}.italic{font-style:italic}.underline{text-decoration:underline}.inverted{background:#fff;color:#000}::selection{color:#000;background:#fff}  
+	</style>
+    
+    <script async src="js/sha256.js"></script>
+    <script async src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    
+    <script async>
+	  <!-- google analytics -->
+      
+      if (!window.jQuery) document.write('<script src="js/jquery.js"><\/script>');
+    </script>
+    <script>
+      function randomColour(){var e="0123456789ABCD".split("");var t="#";for(var n=0;n<6;n++){t+=e[Math.round(Math.random()*13)]}return t}function showAside(){if($("aside").is(":hidden")){$("aside").fadeIn(500)}else{$("aside").fadeOut(500)}}function doRequest(){var e=$("#string").val();$("#sha256").val(SHA256(e))}function age(e){var t=+(new Date(e));return~~((Date.now()-t)/315576e5)}$(document).ready(function(){$("#string").keyup(function(){setInterval(doRequest(),100)});$("body,html").css("background",randomColour());$(".age").text(age("1995-11-10"))})
+    </script>
+  </head>
+  
+  <body>
+    <header id="main_header">
+      <ul>
+        <li class="left">
+          <a href="/index.html">
+            <img src="images/logo-small.png" alt="">
+          </a>
+        </li>
+        <li class="left">
+          <a href="http://getmd5.tk">
+            <img src="images/logo-getmd5.png" alt="">
+          </a>
+        </li>
+        <li class="left">
+          <a href="http://getsha1.tk">
+            <img src="images/logo-getsha1.png" alt="">
+          </a>
+        </li>
+        <li>
+          <a onclick='$("body,html").css("background", randomColour())'>
+            <img alt="Change colour" title="Change colour" src="images/palette.png" width="20" height="20">
+          </a>
+        </li>
+        <li>
+          <a onClick="showAside()">
+            <img alt="About me" title="About me" id="aboutMe" src="images/user.png" width="20" height="20">
+          </a>
+        </li>
+      </ul>
+    </header>
+    
+    <aside>
+      <h2>About me</h2>
+      
+      <p class="italic">
+      	Hello! My name is Robin. I'm <span class="age">17</span> years old, living in Belgium. I'm about to go to college and study ICT.
+      </p>
+      
+      <p class="bold">
+      	I love designing websites.
+      </p>
+      
+      <p>
+      	Thank you for visiting. I hope this website will be somewhat useful to you.
+	  	The source code is available on <a href="http://adf.ly/RRIrk" class="bold">Github</a>. (:
+	  </p>
+      
+      <p>
+      	If you'd like to contact me, feel free to e&#8209;mail me at <img src="images/email.png" alt="email">
+        or mention me on <a href="http://adf.ly/RFmR9" class="bold">Twitter</a>.
+      </p>
+      
+      <p>
+        Feel free to check out <a href="http://adf.ly/RRKDk" class="bold">YouTube Channel</a>.
+      </p>
+      
+      <p class="italic center inverted">
+      	 2013 &bullet; Robin
+      </p>
+    </aside>
+    
+    <div id="container">
+      <a href="index.html">
+        <img class="logo" src="images/logo.png" alt="" width="286" height="70">
+      </a>
+      
+      <input type="text" id="string" placeholder="Enter text here, we'll calculate the sha256-hash!" autofocus="autofocus">
+      <input type="text" id="sha256" readonly="readonly" value="da39a3ee5e6b4b0d3255bfef95601890afd80709">
+    </div>
+    
+    <div id="social">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://getsha256.tk">Tweet</a>
+		<script async>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>
